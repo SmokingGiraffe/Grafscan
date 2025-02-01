@@ -1,0 +1,2 @@
+# Grafscan
+Solana Scam Defender
