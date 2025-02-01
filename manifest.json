@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Grafscan",
+  "version": "1.0",
+  "description": "Detects potential Solana wallet drainer scams.",
+  "permissions": ["storage", "activeTab", "webRequest", "webRequestBlocking", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "contact@smokinggiraffes.com"
+    }
+  },
+  "web_accessible_resources": ["blocked.html", "blocked-warning.jpg"]
+}
